@@ -28,7 +28,7 @@ function Textbox:setText(text, callback)
         end
     else
         local dh_actor = Game:getFlag("dh_actor", {})
-        table.insert(dh_actor, 1, nil)
+        table.insert(dh_actor, 1, "")
         if #Game:getFlag("dh_actor") > Kristal.getLibConfig("dialogue_history", "max_message") then
             table.remove(dh_actor)
         end
