@@ -5,7 +5,7 @@ function Lib:init()
 end
 
 function Lib:load(data, new_file, index)
-    if new_file then
+    if not Game:getFlag("dh_history") then
         Game:setFlag("dh_history", { })
     end
 end
