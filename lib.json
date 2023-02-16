@@ -7,6 +7,7 @@
         "BrandonK7200"
     ],
     "config": {
-        "nametags": false
+        "nametags": false,
+        "max_message": 10
     },
 }
