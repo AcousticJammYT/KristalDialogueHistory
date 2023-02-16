@@ -2,8 +2,11 @@
     "id": "dialogue_history",
     "version": "1.0.0",
     "engineVersion": "0.8.0",
-	"authors": [
-		"AcousticJamm",
-    "BrandonK7200"
-	],
+    "authors": [
+        "AcousticJamm",
+        "BrandonK7200"
+    ],
+    "config": {
+        "nametags": false
+    },
 }
