@@ -7,19 +7,28 @@ function Textbox:setText(text, callback)
     if #Game:getFlag("dh_history") > Kristal.getLibConfig("dialogue_history", "max_message") then
         table.remove(dh_history)
     end
-end
-
-function Textbox:setFace(face, ox, oy)
-    super:setFace(self, face, ox, oy)
-    local dh_faces = Game:getFlag("dh_faces", {})
-    table.insert(dh_faces, 1, face)
-    if #Game:getFlag("dh_faces") > Kristal.getLibConfig("dialogue_history", "max_message") then
-        table.remove(dh_faces)
-    end
-    local dh_actor = Game:getFlag("dh_actor", {})
-    table.insert(dh_actor, 1, self.actor)
-    if #Game:getFlag("dh_actor") > Kristal.getLibConfig("dialogue_history", "max_message") then
-        table.remove(dh_actor)
+    if self.face then
+        local dh_faces = Game:getFlag("dh_faces", {})
+        table.insert(dh_faces, 1, self.face)
+        if #Game:getFlag("dh_faces") > Kristal.getLibConfig("dialogue_history", "max_message") then
+            table.remove(dh_faces)
+        end
+        local dh_actor = Game:getFlag("dh_actor", {})
+        table.insert(dh_actor, 1, self.actor)
+        if #Game:getFlag("dh_actor") > Kristal.getLibConfig("dialogue_history", "max_message") then
+            table.remove(dh_actor)
+        end
+    else
+        local dh_faces = Game:getFlag("dh_faces", {})
+        table.insert(dh_faces, 1, nil)
+        if #Game:getFlag("dh_faces") > Kristal.getLibConfig("dialogue_history", "max_message") then
+            table.remove(dh_faces)
+        end
+        local dh_actor = Game:getFlag("dh_actor", {})
+        table.insert(dh_actor, 1, nil)
+        if #Game:getFlag("dh_actor") > Kristal.getLibConfig("dialogue_history", "max_message") then
+            table.remove(dh_actor)
+        end
     end
 end
 
