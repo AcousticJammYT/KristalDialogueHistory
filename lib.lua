@@ -12,4 +12,11 @@ function Lib:load(data, new_file, index)
     end
 end
 
+function Lib:onKeyPressed(key)
+    if Input.pressed("v") then
+        Assets.stopAndPlaySound("ui_select")
+        Game.world:openMenu(MessageHistory())
+    end
+end
+
 return Lib
