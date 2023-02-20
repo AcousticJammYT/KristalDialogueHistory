@@ -6,9 +6,9 @@ end
 
 function Lib:load(data, new_file, index)
     if not Game:getFlag("dh_history") then
-        Game:setFlag("dh_history", { })
-        Game:setFlag("dh_faces", { })
-        Game:setFlag("dh_actor", { })
+        Game.dh_history = { }
+        Game.dh_faces = { }
+        Game.dh_actor = { }
     end
 end
 
