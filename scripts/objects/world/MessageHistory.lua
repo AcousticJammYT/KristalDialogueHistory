@@ -26,14 +26,14 @@ function MessageHistory:init()
     self.bg.debug_select = false
     self:addChild(self.bg)
 
-    self.textData = Game:getFlag("dh_history", {})
+    self.textData = Game.dh_history
 
     self.scroll_y = 1
 end
 
 function MessageHistory:getText()
     local text = {}
-    for _,history in ipairs(Game:getFlag("dh_history", {})) do
+    for _,history in ipairs(Game.dh_history) do
         table.insert(text, history)
     end
     return text
