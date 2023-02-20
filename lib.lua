@@ -5,11 +5,9 @@ function Lib:init()
 end
 
 function Lib:load(data, new_file, index)
-    if not Game:getFlag("dh_history") then
-        Game.dh_history = { }
-        Game.dh_faces = { }
-        Game.dh_actor = { }
-    end
+    Game.dh_history = { }
+    Game.dh_faces = { }
+    Game.dh_actor = { }
 end
 
 function Lib:onKeyPressed(key)
